@@ -16,6 +16,6 @@ return CMap::mergeArray(require (dirname(__FILE__) . '/main.php'), array(
                                 'username' => 'root',
                                 'password' => 'myoa888',
                                 'charset' => 'utf8',
-                                'tablePrefix' => 'tbl_' 
+                                'tablePrefix' => 'tbl_'
                 ) 
 ));
