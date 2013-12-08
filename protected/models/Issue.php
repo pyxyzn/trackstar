@@ -24,6 +24,15 @@
  */
 class Issue extends CActiveRecord
 {
+	//问题类型
+	const TYPE_BUG = 0;
+	const TYPE_FEATURE = 1;
+	const TYPE_TASK=2;
+	
+	//问题状态
+	const STATUS_NOTSTARTED = 0;
+	const STATUS_STARTED = 1;
+	const STATUS_FINISHED = 2;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -131,5 +140,31 @@ class Issue extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	
+	/**
+	 * 获取问题类型
+	 * @return multitype:string
+	 */
+	public function getTypeOptions()
+	{
+		return array(
+			self::TYPE_BUG => 'Bug',
+			self::TYPE_FEATURE => 'Feature',
+			self::TYPE_TASK => 'Task',
+		);
+	}
+	
+	/**
+	 * 获取问题状态
+	 * @return multitype:string
+	 */
+	public function getStatusOption()
+	{
+		return array(
+			self::STATUS_NOTSTARTED => 'Not Yet Started',
+			self::STATUS_STARTED => 'Started',
+			self::STATUS_FINISHED => 'Finished',
+		);
 	}
 }
