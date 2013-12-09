@@ -217,4 +217,9 @@ class IssueController extends Controller
 		}
 		return $this->_project;
 	}
+	
+	public function getProject()
+	{
+		return $this->_project;
+	}
 }
